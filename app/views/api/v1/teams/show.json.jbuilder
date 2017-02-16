@@ -1,0 +1,2 @@
+<%= @team["creature"]%>
+<%= @team["name"] %>
