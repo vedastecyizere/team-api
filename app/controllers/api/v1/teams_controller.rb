@@ -1,4 +1,5 @@
 class Api::V1::TeamsController < ApplicationController
+  skip_before_filter  :verify_authenticity_token
 
   def index
     @teams = Team.all
@@ -22,13 +23,14 @@ class Api::V1::TeamsController < ApplicationController
 
   def  update
     @team = Team.find_by(id:params[:id])
-    @team.update(
+    @team.update_attributes(
       creature: params[:creature],
       name: params[:name],
       state: params[:state],
       sport: params[:sport]
       )
-    render :show 
+    @team.save 
+    render json: @team 
   end
 
   def destroy

@@ -6,11 +6,14 @@ namespace :api do
 
     get "/teams", to: 'teams#index'
     get "/teams/:id", to: 'teams#show'
-    post "/team", to: 'teams#create'
+    post "/teams", to: 'teams#create'
+    get "/teams/:id/edit", to: 'teams#edit'
     patch "/teams/:id", to: 'teams#update'
     delete "/teams/:id", to: 'teams#destroy'
   end 
 end
 
-get "/teams", to: 'teams#index'
+  get "/teams", to: 'teams#index'
+  post "/teams", to: 'teams#create'
+  patch "/teams/:id", to: 'teams#update'
 end 
