@@ -1,0 +1,19 @@
+<div ng-app="app">
+<div ng-controller="teamCtrl" ng-init="setup()">
+<h1>List of Teams</h1>
+<div ng-repeat="team in teams">
+  <h2>Creature: {{team.creature}} </h2>
+  <h2>Name: {{team.name}} </h2>
+  <h2>State: {{team.state}} </h2>
+  <h2>Sport: {{team.sport}} </h2>
+</div>
+
+Add Team:
+    <div>
+      Creature: <input ng-model="Teamcreature">
+      Name: <input ng-model="Teamname">
+      State: <input ng-model="Teamstate">
+      Sport: <input ng-model="Teamsport">
+
+      <button ng-click="addTeam(Teamcreature, Teamname, Teamstate, Teamsport)">Add Team</button>
+    </div>

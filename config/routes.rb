@@ -12,5 +12,5 @@ namespace :api do
   end 
 end
 
-get "/infos", to: 'infos#index'
+get "/teams", to: 'teams#index'
 end 
